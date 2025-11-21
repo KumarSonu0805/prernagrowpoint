@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Prernagrowpoint - Login</title>
+      <?php include "./common/include.php"?>
+   </head>
+   <body>
+      <?php include "./common/navbar.php"?>
+     <section class="login-section">
+   <div class="container">
+      <div class="login-box">
+
+         
+
+        <div class="row">
+            <div class="col-lg-6">
+                <h2 class="login-title">Login to Your Account</h2>
+         <p class="login-subtitle">Welcome back! Please enter your details.</p>
+                 <form>
+            <div class="mb-3">
+               <label class="form-label">Email Address</label>
+               <input type="email" class="form-control login-input" placeholder="name@example.com">
+            </div>
+
+            <div class="mb-3">
+               <label class="form-label">Password</label>
+               <input type="password" class="form-control login-input" placeholder="******">
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center mb-3">
+               <div class="form-check">
+                 <input class="form-check-input" type="checkbox" id="remember">
+                 <label class="form-check-label" for="remember">Remember Me</label>
+               </div>
+               <a href="#" class="forgot-link">Forgot Password?</a>
+            </div>
+
+            <button type="submit" class="login-btn">Login</button>
+
+            <p class="register-text">
+               Don’t have an account? <a href="register.php" class="register-link">Register Now</a>
+            </p>
+         </form>
+            </div>
+            <div class="col-lg-6">
+                <div class="loginimg">
+                    <img src="./images/loginform.webp" alt="login image">
+                </div>
+            </div>
+        </div>
+
+      </div>
+   </div>
+</section>
+
+  
+      <?php include "./common/footer.php"?>
+      <?php include "./common/vendor.php"?>
+   </body>
+</html>

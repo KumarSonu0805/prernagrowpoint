@@ -1,0 +1,160 @@
+/* CSS Document */
+.hidden{
+    display: none !important;
+}
+.login-page{
+	position: relative;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+.login-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.login-page > * {
+  position: relative;
+  z-index: 2;
+}
+/*----------------------------------------- Theme Color --------------------------------------*/
+.card-oflep{
+	box-shadow: none;
+}
+.card-oflep.card-outline{
+	border-top: 3px solid #344291;
+}
+.btn-oflep{
+	background-color: #344291;
+	border-color: #344291;
+	color: #fff;
+	box-shadow: none;
+}
+.btn-oflep:hover,
+.btn-oflep:active{
+	background-color: #27316b;
+	border-color: #27316b;
+	color: #dadada;
+	box-shadow: none;
+}
+.navbar-oflep{
+	background-color: #344291;
+	color: #fff;
+}
+.sidebar-dark-oflep .nav-sidebar>.nav-item>.nav-link.active, 
+.sidebar-light-oflep .nav-sidebar>.nav-item>.nav-link.active{
+	background-color: #ef7e02;
+	color: #fff;
+}
+.sidebar-dark-oflep .nav-pills .nav-link:not(.active):hover{
+	background-color: #db9243;
+	color: #fff;
+}
+/*----------------------------------------- Theme Color --------------------------------------*/
+
+/*----------------------------------------- Loader --------------------------------------*/
+#loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none; /* hidden by default */
+  align-items: center;
+  justify-content: center;
+  z-index: 9999; /* above AdminLTE */
+}
+
+#loader-overlay i {
+  font-size: 3rem;
+  color: #fff;
+}
+/*----------------------------------------- Loader --------------------------------------*/
+
+/*----------------------------------------- Sidebar --------------------------------------*/
+/*----------------------------------------- Sidebar --------------------------------------*/
+
+/*----------------------------------------- Tree Structure --------------------------------------*/
+#tree-loader{    
+	position: absolute;
+    top: -3%;
+    left: 0%;
+    background: #FFFFFF;
+    height: 106%;
+    width: 100%;
+    padding-top: 15%;
+	opacity:0.7;
+}
+.tree-table{
+	min-width:500px;
+}
+.tree-table td{
+	border:0;
+	padding:0;
+}
+.branch{
+	border-top:1px solid #000000 !important;
+	border-left:1px solid #000000 !important;
+	border-right:1px solid #000000 !important;
+}
+.member-img{
+	border:0;
+	height:70px;
+	width:70px;
+}
+/*.member-img.inactive{
+	border:1.5px solid #DB2F31;
+}
+.member-img.b-purple{
+	border:1.5px solid #605ca8;
+}
+.member-img.b-orange{
+	border:1.5px solid #ff851b;
+}
+.member-img.b-primary{
+	border:1.5px solid #3c8dbc;
+}
+.member-img.b-maroon{
+	border:1.5px solid #D81B60;
+}
+.member-img.b-success{
+	border:1.5px solid #48ED56;
+}
+.member-img.b-navy{
+	border:1.5px solid #001F3F;
+}*/
+.tree-btn{
+	font-size:12px;
+	min-width:50px;
+}
+.open-branch{
+	cursor:pointer;
+	max-width:200px;
+}
+#tree-member-details{
+	width: 300px;
+    font-size: 14px;
+   	border: 1px solid #dd4b39;
+    color: #fff;
+    background-color: #c73d2c;
+    box-shadow: 1px 1px 5px #904941;
+    padding: 10px;
+}
+#tree-member-details ul{
+	list-style:none;
+	padding:0 5px;
+}
+#tree-member-details ul li{
+	padding:5px;
+}
+.rounded-circle{
+	border-radius:50%;
+}
+/*----------------------------------------- Tree Structure --------------------------------------*/

@@ -278,7 +278,7 @@
 			$.ajax({
 				type:"POST",
 				url:"<?php echo base_url("members/getrefid/"); ?>",
-				data:{username:username,status:'activated'},
+				data:{username:username,status:'all'},
 				beforeSend: function(data){
 					$('#refdiv').html($('#dot-loader').html());
 				},

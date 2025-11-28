@@ -28,7 +28,7 @@ if(isset($_SERVER['HTTP_HOST']) && ($_SERVER['HTTP_HOST']=='localhost')){
     $config['base_url'] = "http://$_SERVER[HTTP_HOST]/projects/prernagrowpoint";
 }
 else{
-	$config['base_url'] = "http://$_SERVER[HTTP_HOST]";
+	$config['base_url'] = "https://$_SERVER[HTTP_HOST]";
 }
 /*
 |--------------------------------------------------------------------------

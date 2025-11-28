@@ -15,8 +15,8 @@
          </div>
          <div class="col-lg-4">
             <ul class="registerHelping d-lg-flex">
-               <li><a href="login.php" class="helpBtn">Login</a></li>
-               <li><a href="register.php" class="helpBtn">Register</a></li>
+               <li><a href="../login/" class="helpBtn">Login</a></li>
+               <li><a href="../register/" class="helpBtn">Register</a></li>
             </ul>
          </div>
       </div>
@@ -44,28 +44,28 @@
                <ul class="navbar-nav align-items-lg-center">
                   <li class="nav-item">
                      <a class="nav-link <?= strpos($_SERVER['PHP_SELF'],'index.php')!==FALSE?'active':''; ?>" 
-                        href="index.php">Home</a>
+                        href="<?= base_url(); ?>">Home</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link <?= strpos($_SERVER['PHP_SELF'],'aboutus.php')!==FALSE?'active':''; ?>" href="aboutus.php">About Us</a>
+                     <a class="nav-link <?= strpos($_SERVER['PHP_SELF'],'aboutus.php')!==FALSE?'active':''; ?>" href="../aboutus.php">About Us</a>
                   </li>
                   <li class="nav-item">
                      <a class="nav-link <?= strpos($_SERVER['PHP_SELF'],'service.php')!==FALSE?'active':''; ?>"  
-                        href="service.php">Services</a>
+                        href="../service.php">Services</a>
                   </li>
                   <li class="nav-item">
                      <a class="nav-link <?= strpos($_SERVER['PHP_SELF'],'gallery.php')!==FALSE?'active':''; ?>" 
-                        href="gallery.php">Gallery</a>
+                        href="../gallery.php">Gallery</a>
                   </li>
                   <li class="nav-item">
                      <a class="nav-link <?= strpos($_SERVER['PHP_SELF'],'contact.php')!==FALSE?'active':''; ?>" 
-                        href="contact.php">Contact Us</a>
+                        href="../contact.php">Contact Us</a>
                   </li>
                   <li class="nav-item d-lg-none">
-                     <a class="nav-link" href="login.php">Login</a>
+                     <a class="nav-link" href="../login/">Login</a>
                   </li>
                   <li class="nav-item d-lg-none">
-                     <a class="nav-link" href="register.php">Register</a>
+                     <a class="nav-link" href="../register/">Register</a>
                   </li>
                </ul>
             </div>

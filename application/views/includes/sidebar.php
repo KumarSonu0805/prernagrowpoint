@@ -75,12 +75,12 @@
                                             <p>Account Details</p>
                                         </a>
                                     </li>
-                                    <?php /*?><li class="nav-item">
+                                    <li class="nav-item">
                                         <a href="<?php echo base_url("profile/kyc/"); ?>" class="nav-link <?php echo activate_menu('profile/kyc'); ?>">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Upload KYC</p>
                                         </a>
-                                    </li><?php */?>
+                                    </li>
                                 </ul>
                             </li>
                             <?php 

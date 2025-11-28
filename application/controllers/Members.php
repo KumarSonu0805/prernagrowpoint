@@ -63,8 +63,13 @@ class Members extends MY_Controller {
     
 	public function registered(){
 		if($this->session->flashdata('mname')===NULL){
-			redirect('members');
+			redirect('members/');
 		}
+        /*$name=$this->session->flashdata('mname');
+        $uname=$this->session->flashdata('uname');
+        $pass=$this->session->flashdata('pass');
+        $flash=array("mname"=>$name,"uname"=>$uname,"pass"=>$pass);
+        $this->session->set_flashdata($flash);*/
 		$data['title']="Registration Details";
 		if($this->session->userdata('user')!==NULL){
 			$data['breadcrumb']=array("/"=>"Home");

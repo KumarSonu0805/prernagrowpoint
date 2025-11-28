@@ -38,7 +38,7 @@
             <td><?php echo $member['ref']; ?></td>
             <td><?php echo $member['refname']; ?></td>
             <td><?php echo date('d-m-Y',strtotime($member['date'])); ?></td>
-            <td><?php if($member['activation_date']!='0000-00-00')echo date('d-m-Y',strtotime($member['activation_date'])); ?></td>
+            <td><?php if(!empty($member['activation_date']))echo date('d-m-Y',strtotime($member['activation_date'])); ?></td>
             <td><?php echo $member['package']; ?></td>
             <td><?php echo $status; ?></td>
             <?php if($this->session->role=='admin'){ ?>

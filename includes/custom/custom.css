@@ -23,6 +23,24 @@
   position: relative;
   z-index: 2;
 }
+.hidden{
+    display: none !important;
+}
+
+.profile{
+	font-size:14px;
+}
+.profile .table th,
+.profile .table td{
+	padding:.50rem;
+}
+#accform,
+#nomineeform,
+#contactform,
+#personalform,
+#photoform{
+	display:none;
+}
 /*----------------------------------------- Theme Color --------------------------------------*/
 .card-oflep{
 	box-shadow: none;

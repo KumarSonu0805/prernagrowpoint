@@ -59,4 +59,5 @@ $route['enter-otp']='login/enterotp';
 $route['reset-password']='login/resetpassword';
 $route['logout']='login/logout';
 
+$route['register']='members/index';
 $route['registered']='members/registered';

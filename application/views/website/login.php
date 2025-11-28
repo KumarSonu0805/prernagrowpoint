@@ -20,27 +20,27 @@
          <p class="login-subtitle">Welcome back! Please enter your details.</p>
                  <?= form_open('login/validatelogin'); ?>
             <div class="mb-3">
-               <label class="form-label">Email Address</label>
-               <input type="email" class="form-control login-input" placeholder="name@example.com">
+               <label class="form-label">Username</label>
+               <input type="text" name="username" placeholder="Username" class="form-control login-input">
             </div>
 
             <div class="mb-3">
                <label class="form-label">Password</label>
-               <input type="password" class="form-control login-input" placeholder="******">
+               <input type="password" name="password" class="form-control login-input" placeholder="******">
             </div>
 
-            <div class="d-flex justify-content-between align-items-center mb-3">
+            <div class="d-flex justify-content-between align-items-center mb-3 d-none">
                <div class="form-check">
                  <input class="form-check-input" type="checkbox" id="remember">
                  <label class="form-check-label" for="remember">Remember Me</label>
                </div>
-               <a href="#" class="forgot-link">Forgot Password?</a>
+               <a href="#" class="forgot-link d-none">Forgot Password?</a>
             </div>
 
             <button type="submit" class="login-btn">Login</button>
 
             <p class="register-text">
-               Don’t have an account? <a href="register.php" class="register-link">Register Now</a>
+               Don’t have an account? <a href="../register/" class="register-link">Register Now</a>
             </p>
               <?= form_close(); ?>
             </div>

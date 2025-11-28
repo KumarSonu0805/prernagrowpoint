@@ -4,10 +4,10 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Prernagrowpoint - Register</title>
-      <?php include "./common/include.php"?>
+      <?php $this->load->view("website/common/include"); ?>
    </head>
    <body>
-      <?php include "./common/navbar.php"?>
+      <?php $this->load->view("website/common/navbar"); ?>
      <section class="register-section">
    <div class="container">
       <div class="register-box">
@@ -47,14 +47,14 @@
             <button type="submit" class="register-btn">Register</button>
 
             <p class="login-text">
-               Already have an account? <a href="login.php" class="login-link">Login here</a>
+               Already have an account? <a href="../login/" class="login-link">Login here</a>
             </p>
 
          </form>
         </div>
         <div class="col-lg-6">
  <div class="loginimg">
-                    <img src="./images/register.webp" alt="login image">
+                    <img src="../images/register.webp" alt="login image">
                 </div>
         </div>
        </div>
@@ -63,7 +63,7 @@
 </section>
 
   
-      <?php include "./common/footer.php"?>
-      <?php include "./common/vendor.php"?>
+      <?php $this->load->view("website/common/footer"); ?>
+      <?php $this->load->view("website/common/vendor"); ?>
    </body>
 </html>

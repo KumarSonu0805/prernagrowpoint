@@ -27,7 +27,7 @@
       <a class="navbar-brand brand-area" href="index.php">
          <h2 class="company-logo">
             <!-- <span>Prernagrowpoint</span> -->
-             <img src="./images/logo.png" alt="logo">
+             <img src="../images/logo.png" alt="logo">
          </h2>
       </a>
      
@@ -36,7 +36,7 @@
             <div class="offcanvas-header">
                <h5 class="offcanvas-title">
                   <!-- Prernagrowpoint -->
-                   <img src="./images/mobilelogo.png" alt="logo">
+                   <img src="../images/mobilelogo.png" alt="logo">
                </h5>
                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
             </div>
@@ -73,7 +73,7 @@
       </div>
        <button class="navbar-toggler elegant-toggler" type="button" 
          data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
-      <img src="./images/hamburger.png" alt="hamburger">
+      <img src="../images/hamburger.png" alt="hamburger">
       </button>
    </div>
 </nav>

@@ -34,276 +34,287 @@
                     <!-- Sidebar Menu -->
                     <nav class="mt-2">
                         <ul class="nav nav-pills nav-sidebar nav-compact flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                            <?php if($this->session->sess_type=='admin_access'){ ?>
+                            <li class="nav-item">
+                                <a href="<?= base_url('login/backtoadmin'); ?>" class="nav-link ">
+                                    <i class="nav-icon fas fa-arrow-left"></i>
+                                    <p>Back to Admin Panel</p>
+                                </a>
+                            </li>
+                            <?php } ?>
                             <li class="nav-item">
                                 <a href="<?= base_url('home/'); ?>" class="nav-link <?= activate_menu('home'); ?>">
                                     <i class="nav-icon fas fa-tachometer-alt"></i>
                                     <p>Home</p>
                                 </a>
                             </li>
-                            <?php if(false && $this->session->role=='admin'){ ?>
-                            <li class="nav-item has-treeview <?= activate_dropdown('masterkey'); ?>">
-                                <a href="#" class="nav-link <?= activate_dropdown('masterkey','a'); ?>">
-                                    <i class="nav-icon fas fa-key"></i>
-                                    <p>Master Key <i class="right fas fa-angle-left"></i></p>
+                            <?php
+                            if($this->session->role!='admin'){
+                            ?>
+                            <li class="nav-item has-treeview <?php echo activate_dropdown('profile'); ?>">
+                                <a href="#" class="nav-link <?php echo activate_dropdown('profile','a'); ?>">
+                                    <i class="nav-icon far fa-user"></i>
+                                    <p>My Profile <i class="right fas fa-angle-left"></i></p>
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="<?= base_url('masterkey/'); ?>" class="nav-link <?= activate_menu('masterkey'); ?>">
+                                        <a href="<?php echo base_url("profile/"); ?>" class="nav-link <?php echo activate_menu('profile'); ?>">
                                             <i class="far fa-circle nav-icon"></i>
-                                            <p>State</p>
+                                            <p>Profile</p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="<?= base_url('masterkey/district/'); ?>" class="nav-link <?= activate_menu('masterkey/district'); ?>">
+                                        <a href="<?php echo base_url("changepassword/"); ?>" class="nav-link <?php echo activate_menu('home/changepassword'); ?>">
                                             <i class="far fa-circle nav-icon"></i>
-                                            <p>District</p>
+                                            <p>Change Password</p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="<?= base_url('masterkey/area/'); ?>" class="nav-link <?= activate_menu('masterkey/area'); ?>">
+                                        <a href="<?php echo base_url("profile/accdetails/"); ?>" class="nav-link <?php echo activate_menu('profile/accdetails'); ?>">
                                             <i class="far fa-circle nav-icon"></i>
-                                            <p>Area</p>
+                                            <p>Account Details</p>
                                         </a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a href="<?= base_url('masterkey/beat/'); ?>" class="nav-link <?= activate_menu('masterkey/beat'); ?>">
+                                    <?php /*?><li class="nav-item">
+                                        <a href="<?php echo base_url("profile/kyc/"); ?>" class="nav-link <?php echo activate_menu('profile/kyc'); ?>">
                                             <i class="far fa-circle nav-icon"></i>
-                                            <p>Beat</p>
+                                            <p>Upload KYC</p>
                                         </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="<?= base_url('masterkey/brand/'); ?>" class="nav-link <?= activate_menu('masterkey/brand'); ?>">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Brand</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="<?= base_url('masterkey/finance/'); ?>" class="nav-link <?= activate_menu('masterkey/finance'); ?>">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Finance Company</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="<?= base_url('masterkey/bank/'); ?>" class="nav-link <?= activate_menu('masterkey/bank'); ?>">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Banks</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item has-treeview <?= activate_dropdown('employees'); ?>">
-                                <a href="#" class="nav-link <?= activate_dropdown('employees','a'); ?>">
-                                    <i class="nav-icon fas fa-users"></i>
-                                    <p>Employees<i class="right fas fa-angle-left"></i></p>
-                                </a>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="<?= base_url('employees/'); ?>" class="nav-link <?= activate_menu('employees'); ?>">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Add Employee</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="<?= base_url('employees/employeelist/'); ?>" class="nav-link <?= activate_menu('employees/employeelist'); ?>">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Employee List</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="<?= base_url('employees/trackemployee/'); ?>" class="nav-link <?= activate_menu('employees/trackemployee'); ?>">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Track Employee</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="<?= base_url('employees/assignbeat/'); ?>" class="nav-link <?= activate_menu('employees/assignbeat'); ?>">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Assign Beat</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="<?= base_url('employees/assignedbeats/'); ?>" class="nav-link <?= activate_menu('employees/assignedbeats'); ?>">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Assigned Beat</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item has-treeview <?= activate_dropdown('dealers'); ?>">
-                                <a href="#" class="nav-link <?= activate_dropdown('dealers','a'); ?>">
-                                    <i class="nav-icon fas fa-users"></i>
-                                    <p>Dealers<i class="right fas fa-angle-left"></i></p>
-                                </a>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="<?= base_url('dealers/'); ?>" class="nav-link <?= activate_menu('dealers'); ?>">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Add Dealer</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="<?= base_url('dealers/dealerlist/'); ?>" class="nav-link <?= activate_menu('dealers/dealerlist'); ?>">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Dealer List</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="<?= base_url('dealers/dealermap/'); ?>" class="nav-link <?= activate_menu('dealers/dealermap'); ?>">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Dealer Map</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item has-treeview <?= activate_dropdown('expenses'); ?>">
-                                <a href="#" class="nav-link <?= activate_dropdown('expenses','a'); ?>">
-                                    <i class="nav-icon fas fa-users"></i>
-                                    <p>Expenses<i class="right fas fa-angle-left"></i></p>
-                                </a>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="<?= base_url('expenses/'); ?>" class="nav-link <?= activate_menu('expenses'); ?>">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Add Expense</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="<?= base_url('expenses/expenselist/'); ?>" class="nav-link <?= activate_menu('expenses/expenselist'); ?>">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Expense List</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="<?= base_url('expenses/expensehead/'); ?>" class="nav-link <?= activate_menu('expenses/expensehead'); ?>">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Expense Heads</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item has-treeview d-none <?= activate_dropdown('settings'); ?>">
-                                <a href="#" class="nav-link <?= activate_dropdown('settings','a'); ?>">
-                                    <i class="nav-icon fas fa-cogs"></i>
-                                    <p>Settings<i class="right fas fa-angle-left"></i></p>
-                                </a>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="<?= base_url('settings/'); ?>" class="nav-link <?= activate_menu('settings'); ?>">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>General</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item d-none <?= activate_dropdown('customize'); ?>">
-                                <a href="#" class="nav-link <?= activate_dropdown('customize','a'); ?>">
-                                    <i class="nav-icon fas fa-wrench"></i>
-                                    <p>
-                                        Customize
-                                        <i class="right fas fa-angle-left"></i>
-                                    </p>
-                                </a>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item d-none">
-                                        <a href="<?= base_url('customize/'); ?>" class="nav-link <?= activate_menu('customize'); ?>">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Banner Images</p>
-                                        </a>
-                                    </li>
+                                    </li><?php */?>
                                 </ul>
                             </li>
                             <?php 
-                                }
-                                elseif(false && $this->session->role=='dso'){ 
+                                }else{
                             ?>
-                            <li class="nav-item has-treeview <?= activate_dropdown(['dealers']); ?>">
-                                <a href="#" class="nav-link <?= activate_dropdown(['dealers'],'a'); ?>">
+                            <li class="nav-item">
+                                <a href="<?php echo base_url('changepassword/'); ?>" class="nav-link <?php echo activate_menu('home/changepassword'); ?>">
+                                    <i class="nav-icon fas fa-key"></i>
+                                    <p>Change Password</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?= base_url('profile/adminaccdetails/'); ?>" class="nav-link <?= activate_menu('profile/adminaccdetails'); ?>">
+                                    <i class="nav-icon fas fa-list"></i>
+                                    <p>Admin Account Details</p>
+                                </a>
+                            </li>
+                            <?php
+                                } 
+                            ?>
+                            <li class="nav-item has-treeview <?= activate_dropdown('members'); ?>">
+                                <a href="#" class="nav-link <?= activate_dropdown('members','a'); ?>">
                                     <i class="nav-icon fas fa-users"></i>
-                                    <p>Dealers<i class="right fas fa-angle-left"></i></p>
+                                    <p>Members <i class="right fas fa-angle-left"></i></p>
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="<?= base_url('dealers/'); ?>" class="nav-link <?= activate_menu('dealers'); ?>">
+                                        <a href="<?= base_url("members/"); ?>" class="nav-link <?= activate_menu('members'); ?>">
                                             <i class="far fa-circle nav-icon"></i>
-                                            <p>Add Dealer</p>
+                                            <p>Member Registration</p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="<?= base_url('dealers/dealerlist/'); ?>" class="nav-link <?= activate_menu('dealers/dealerlist'); ?>">
+                                        <a href="<?= base_url("members/memberlist/"); ?>" class="nav-link <?= activate_menu('members/memberlist'); ?>">
                                             <i class="far fa-circle nav-icon"></i>
-                                            <p>Dealer List</p>
+                                            <p>Member List</p>
+                                        </a>
+                                    </li>
+                                    <?php /*?><li class="nav-item">
+                                        <a href="<?= base_url("members/activelist/"); ?>" class="nav-link <?= activate_menu('members/activelist'); ?>">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Active Member List</p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="<?= base_url('dealers/dealermap/'); ?>" class="nav-link <?= activate_menu('dealers/dealermap'); ?>">
+                                        <a href="<?= base_url("members/inactivelist/"); ?>" class="nav-link <?= activate_menu('members/inactivelist'); ?>">
                                             <i class="far fa-circle nav-icon"></i>
-                                            <p>Dealer Map</p>
+                                            <p>In-Active Member List</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="<?= base_url("members/renewals/"); ?>" class="nav-link <?= activate_menu('members/renewals'); ?>">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Member Renewals</p>
+                                        </a>
+                                    </li><?php */?>
+                                    <?php if($this->session->role=='admin'){ ?>
+                                    
+                                    <li class="nav-item d-none">
+                                        <a href="<?= base_url("members/activationrequests/"); ?>" class="nav-link <?= activate_menu('members/activationrequests'); ?>">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Activation Request List</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item d-none">
+                                        <a href="<?= base_url("members/approvedactivations/"); ?>" class="nav-link <?= activate_menu('members/approvedactivations'); ?>">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Approved Activation List</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="<?= base_url("members/entertomember/"); ?>" class="nav-link <?= activate_menu('members/entertomember'); ?>">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Enter to Member</p>
+                                        </a>
+                                    </li>
+                                    <?php } ?>
+                                    <?php /*if($this->session->role=='admin'){ ?>
+                                    <li class="nav-item">
+                                        <a href="<?php echo base_url("members/kyc/"); ?>" class="nav-link <?php echo activate_menu("members/kyc"); ?>">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>KYC Requests</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="<?php echo base_url("members/approvedkyc/"); ?>" class="nav-link <?php echo activate_menu("members/approvedkyc"); ?>">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Approved KYC</p>
+                                        </a>
+                                    </li>
+                                    <?php }*/ ?>
+                                </ul>
+                            </li>
+                            <li class="nav-item has-treeview d-none <?= activate_dropdown('deposits'); ?>">
+                                <a href="#" class="nav-link <?= activate_dropdown('deposits','a'); ?>">
+                                    <i class="nav-icon fas fa-money-bill"></i>
+                                    <p>Money Transfer <i class="right fas fa-angle-left"></i></p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <?php if($this->session->role=='admin'){ ?>
+                                    <li class="nav-item">
+                                        <a href="<?= base_url("deposits/requestlist/"); ?>" class="nav-link <?= activate_menu('deposits/requestlist'); ?>">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Deposit Request List</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="<?= base_url("deposits/approvedlist/"); ?>" class="nav-link <?= activate_menu('deposits/approvedlist'); ?>">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Approved Deposit List</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="<?= base_url("deposits/transferrequest/"); ?>" class="nav-link <?= activate_menu('deposits/transferrequest'); ?>">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Transfer Request</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="<?= base_url("deposits/transferrequestlist/"); ?>" class="nav-link <?= activate_menu('deposits/transferrequestlist'); ?>">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Transfer Request List</p>
+                                        </a>
+                                    </li>
+                                    <?php }else{ ?>
+                                    <!-- <li class="nav-item">
+                                        <a href="<?= base_url("deposits/"); ?>" class="nav-link <?= $this->uri->segment(1)!='activateaccount'?activate_menu('deposits'):''; ?>">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Transfer Money</p>
+                                        </a>
+                                    </li> -->
+                                    <li class="nav-item">
+                                        <a href="<?= base_url("deposits/depositlist/"); ?>" class="nav-link <?= activate_menu('deposits/depositlist'); ?>">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Deposit List</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="<?= base_url("deposits/requestlist/"); ?>" class="nav-link <?= activate_menu('deposits/requestlist'); ?>">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Deposit Request List</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="<?= base_url("deposits/approvedlist/"); ?>" class="nav-link <?= activate_menu('deposits/approvedlist'); ?>">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Approved Deposit List</p>
+                                        </a>
+                                    </li>
+                                    <?php } ?>
+                                </ul>
+                            </li>
+                            <?php if($this->session->role=='member'){  ?>
+                            <li class="nav-item">
+                                <a href="<?php echo base_url('wallet/incomes/'); ?>" class="nav-link <?php echo activate_menu('wallet/incomes'); ?>">
+                                    <i class="nav-icon fas fa-money-bill-alt"></i>
+                                    <p>My Incomes</p>
+                                </a>
+                            </li>
+                            <li class="nav-item has-treeview <?php echo activate_dropdown('wallet','li',array('incomes')); ?>">
+                                <a href="#" class="nav-link <?php echo activate_dropdown('wallet','a',array('incomes')); ?>">
+                                    <i class="nav-icon fas fa-wallet"></i>
+                                    <p>Wallet <i class="right fas fa-angle-left"></i></p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="<?php echo base_url("wallet/"); ?>" class="nav-link <?php echo activate_menu("wallet"); ?>">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>My Wallet</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item hidden">
+                                        <a href="<?php echo base_url("wallet/wallettransfer/"); ?>" class="nav-link <?php echo activate_menu("wallet/wallettransfer"); ?>">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Wallet Transfer</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item hidden">
+                                        <a href="<?php echo base_url("wallet/walletreceived/"); ?>" class="nav-link <?php echo activate_menu("wallet/walletreceived"); ?>">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Wallet Received</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="<?php echo base_url("wallet/withdrawal/"); ?>" class="nav-link <?php echo activate_menu("wallet/withdrawal"); ?>">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Request Withdrawal</p>
                                         </a>
                                     </li>
                                 </ul>
                             </li>
-                            <li class="nav-item has-treeview <?= activate_dropdown(['beats']); ?>">
-                                <a href="#" class="nav-link <?= activate_dropdown(['beats'],'a'); ?>">
-                                    <i class="nav-icon fas fa-users"></i>
-                                    <p>Beats<i class="right fas fa-angle-left"></i></p>
+                            <?php
+                            }else{
+                            ?>
+                            <li class="nav-item d-none">
+                                <a href="<?php echo base_url('wallet/wallettransfer/'); ?>" class="nav-link <?php echo activate_menu('wallet/wallettransfer'); ?>">
+                                    <i class="nav-icon fas fa-money-bill-alt"></i>
+                                    <p>Fund Transfer</p>
                                 </a>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="<?= base_url('beats/assignedbeats/'); ?>" class="nav-link <?= activate_menu('beats/assignedbeats'); ?>">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Assigned Beats</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="<?= base_url('beats/'); ?>" class="nav-link <?= activate_menu('beats'); ?>">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Beat Wise Dealer List</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="<?= base_url('beats/beatmap/'); ?>" class="nav-link <?= activate_menu('beats/beatmap'); ?>">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Beat Map</p>
-                                        </a>
-                                    </li>
-                                </ul>
                             </li>
-                            <li class="nav-item has-treeview <?= activate_dropdown(['visitreport']); ?>">
-                                <a href="#" class="nav-link <?= activate_dropdown(['visitreport'],'a'); ?>">
-                                    <i class="nav-icon fas fa-file-alt"></i>
-                                    <p>Dealer Visit Report<i class="right fas fa-angle-left"></i></p>
+                            <li class="nav-item has-treeview d-none <?php echo activate_dropdown('wallet','li',array('wallettransfer')); ?>">
+                                <a href="#" class="nav-link <?php echo activate_dropdown('wallet','a',array('wallettransfer')); ?>">
+                                    <i class="nav-icon fas fa-wallet"></i>
+                                    <p>Member Payment <i class="right fas fa-angle-left"></i></p>
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="<?= base_url('visitreport/'); ?>" class="nav-link <?= activate_menu('visitreport'); ?>">
+                                        <a href="<?php echo base_url("wallet/membercommission/"); ?>" class="nav-link <?php echo activate_menu('wallet/membercommission'); ?>">
                                             <i class="far fa-circle nav-icon"></i>
-                                            <p>Add DVR</p>
+                                            <p>Member Commission</p>
                                         </a>
                                     </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item has-treeview <?= activate_dropdown('expenses'); ?>">
-                                <a href="#" class="nav-link <?= activate_dropdown('expenses','a'); ?>">
-                                    <i class="nav-icon fas fa-users"></i>
-                                    <p>Expenses<i class="right fas fa-angle-left"></i></p>
-                                </a>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="<?= base_url('expenses/'); ?>" class="nav-link <?= activate_menu('expenses'); ?>">
+                                    <li class="nav-item d-none">
+                                        <a href="<?php echo base_url("wallet/memberrewards/"); ?>" class="nav-link <?php echo activate_menu('wallet/memberrewards'); ?>">
                                             <i class="far fa-circle nav-icon"></i>
-                                            <p>Add Expense</p>
+                                            <p>Member Rewards</p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="<?= base_url('expenses/expenselist/'); ?>" class="nav-link <?= activate_menu('expenses/expenselist'); ?>">
+                                        <a href="<?php echo base_url("wallet/requestlist/"); ?>" class="nav-link <?php echo activate_menu('wallet/requestlist'); ?>">
                                             <i class="far fa-circle nav-icon"></i>
-                                            <p>Expense List</p>
+                                            <p>Withdrawal Request</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item d-none">
+                                        <a href="<?php echo base_url("wallet/dailypaymentreport/"); ?>" class="nav-link <?php echo activate_menu('wallet/dailypaymentreport'); ?>">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Daily Payment List</p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="<?= base_url('expenses/expensehead/'); ?>" class="nav-link <?= activate_menu('expenses/expensehead'); ?>">
+                                        <a href="<?php echo base_url("wallet/paymentreport/"); ?>" class="nav-link <?php echo activate_menu('wallet/paymentreport'); ?>">
                                             <i class="far fa-circle nav-icon"></i>
-                                            <p>Expense Heads</p>
+                                            <p>Payment Report</p>
                                         </a>
                                     </li>
                                 </ul>

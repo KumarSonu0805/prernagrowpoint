@@ -1,367 +1,315 @@
-<!DOCTYPE html>
-<html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Prernagrowpoint</title>
-      <?php include "./common/include.php"?>
-   </head>
-   <body>
-      <?php include "./common/navbar.php"?>
-      <section class="sliderimage">
-         <div id="carouselExample" class="carousel slide">
-            <div class="carousel-inner">
-               <div class="carousel-item active">
-                  <div class="row">
-                     <div class="col-lg-7">
-                        <div class="slider-content">
-                           <div>
-                              <h2>
-                                 <span> Welcome To Prerna Grow Point </span>
-                                 Best Indian Project 
-                              </h2>
-                              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus quod dignissimos, ipsam in harum nulla nisi cupiditate accusamus cum culpa voluptatum accusantium odio maxime, debitis provident quibusdam modi facere facilis.</p>
-                              <ul>
-                                 <li>
-                                    <a href="aboutus.php">Get Start</a>
-                                 </li>
-                                 <li>
-                                    <a href="service.php" class="bordertransprant">Service</a>
-                                 </li>
-                              </ul>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-5">
-                        <div class="sliderimg">
-                           <img src="./images/slider.png" alt="slider image">
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="carousel-item">
-                  <div class="row">
-                     <div class="col-lg-7">
-                        <div class="slider-content">
-                           <div>
-                              <h2>
-                                 <span> Multilevel Marketing</span> Is Just What Your Business Needs
-                              </h2>
-                              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus quod dignissimos, ipsam in harum nulla nisi cupiditate accusamus cum culpa voluptatum accusantium odio maxime, debitis provident quibusdam modi facere facilis.</p>
-                              <ul>
-                                 <li>
-                                    <a href="aboutus.php">Get Start</a>
-                                 </li>
-                                 <li>
-                                    <a href="service.php" class="bordertransprant">Service</a>
-                                 </li>
-                              </ul>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-5">
-                        <div class="sliderimg">
-                           <img src="./images/slider.png" alt="slider image">
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="carousel-item">
-                  <div class="row">
-                     <div class="col-lg-7">
-                        <div class="slider-content">
-                           <div>
-                              <h2>
-                                 <span> Multilevel Marketing</span> Is Just What Your Business Needs
-                              </h2>
-                              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus quod dignissimos, ipsam in harum nulla nisi cupiditate accusamus cum culpa voluptatum accusantium odio maxime, debitis provident quibusdam modi facere facilis.</p>
-                              <ul>
-                                 <li>
-                                    <a href="aboutus.php">Get Start</a>
-                                 </li>
-                                 <li>
-                                    <a href="service.php" class="bordertransprant">Service</a>
-                                 </li>
-                              </ul>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-5">
-                        <div class="sliderimg">
-                           <img src="./images/slider.png" alt="slider image">
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-            <span class="visually-hidden" aria-hidden="true">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-            </button>
-         </div>
-      </section>
-      <section class="about-section">
-         <div class="container">
-            <div class="row align-items-center">
-               <div class="col-lg-6 mb-4 mb-lg-0">
-                  <div class="about-img">
-                     <img src="./images/aboutusimage.png" alt="About Us">
-                  </div>
-               </div>
-               <div class="col-lg-6">
-                  <div class="about-content">
-                     <h6>  ABOUT US</h6>
-                     <h2 class="about-title">
-                        <span>Prernagrowpoint</span>
-                     </h2>
-                     <p>
-                        P.G.P.  Company एक ऐसी संस्था जो लोगों को सफलता की नई ऊंचाइयों तक पहुंचाने के लिए 
-                        प्रेरित और उत्साहित करती है। 
-                        हम एक मजबूत और पारदर्शी नेटवर्क सिस्टम के माध्यम से
-                        प्रत्येक व्यक्ति  को अपने सपनों 
-                        को साकार  करने का मौका देते है।
-                     </p>
-                     <a href="contact.php" class="about-btn">Know More</a>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-      <section class="vision-mission-section">
-         <div class="overlay"></div>
-         <div class="container">
-            <div class="row justify-content-center">
-               <div class="col-lg-5 col-md-6 mb-4">
-                  <div class="vm-card">
-                     <h2 class="vm-title">OUR VISION</h2>
-                     <p>अधिक लोगों तक रोजगार पहुंचना । कम लागत मे ज्यादा इनकम कमाने का अवसर देना।</p>
-                     <p>हर सदस्य को आर्थिक रूप से मजबूत और आत्मनिर्भर बनाना।</p>
-                     <p>और आर्थिक स्वतंत्रता प्रदान करना।</p>
-                  </div>
-                  <div class="vm-card">
-                     <h2 class="vm-title">OUR MISSION</h2>
-                     <p>भारत मे डायरेक्ट सेलिंग बिजनेस के माध्यम से लाखों लोगों को अपने सपनों को साकार करने का मौका देना।</p>
-                     <p>आपके भविष्य को सुरक्षित और खुशहाल बनाना।</p>
-                     <p>क्योंकि मिलजुल कर काम करने से ही मजबूत और खुशहाल समाज का निर्माण संभव है।</p>
-                  </div>
-               </div>
-               <div class="col-lg-5 col-md-6 mb-4">
-                  <div class="vm-img">
-                     <img src="./images/missionvision.png" alt="leadership">
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-      <section class="mlm-plan-section">
-         <div class="container">
-            <div class="mlm-header text-center">
-               <h2>
-                  <span class="highlight">MLM</span> 
-                  <span class="highlight">Business Plan</span> 
-                  <span class="highlight">Services</span>
-               </h2>
-               <p class="mlm-subtitle">
-                  Let your development ideas become a reality!
-               </p>
-               <p class="mlm-desc">
-                  We provide a complete range of modern MLM Plans that support business growth, 
-                  team development, and long-term income generation. Each plan is designed to offer 
-                  maximum benefits with smart earning opportunities for every member.
-               </p>
-            </div>
-            <div class="row g-4">
-               <div class="col-lg-4 col-md-6">
-                  <div class="mlm-modern-card">
-                     <div class="mlm-modern-icon">
-                        <img src="./images/webdev1.png" alt="Binary Plan">
-                     </div>
-                     <h3 class="mlm-modern-title">Binary Plan</h3>
-                     <p class="mlm-modern-desc">
-                        Binary Plan में दो टीमों के माध्यम से नेटवर्क तेजी से बढ़ता है। 
-                        पेयर मैचिंग के आधार पर लगातार इनकम मिलती है जिससे स्थिर ग्रोथ होती है।
-                     </p>
-                  </div>
-               </div>
-               <div class="col-lg-4 col-md-6">
-                  <div class="mlm-modern-card">
-                     <div class="mlm-modern-icon">
-                        <img src="./images/webdev2.png" alt="Binary Plan">
-                     </div>
-                     <h3 class="mlm-modern-title">Matrix Plan</h3>
-                     <p class="mlm-modern-desc">
-                        Matrix Plan में सीमित Direct Members और Fixed Levels होते हैं, जिससे 
-                        नेटवर्क बैलेंस रहता है और Spillover के माध्यम से टीम के सभी सदस्यों को लाभ मिलता है।
-                     </p>
-                  </div>
-               </div>
-               <div class="col-lg-4 col-md-6">
-                  <div class="mlm-modern-card">
-                     <div class="mlm-modern-icon">
-                        <img src="./images/webdev3.png" alt="Binary Plan">
-                     </div>
-                     <h3 class="mlm-modern-title">Generation Plan</h3>
-                     <p class="mlm-modern-desc">
-                        Generation Plan में अनलिमिटेड लेवल तक कमाई होती है, जिससे 
-                        टीम बढ़ने के साथ स्थिर और दीर्घकालिक आय मिलती है।
-                     </p>
-                  </div>
-               </div>
-               <div class="col-lg-4 col-md-6">
-                  <div class="mlm-modern-card">
-                     <div class="mlm-modern-icon">
-                        <img src="./images/webdev4.png" alt="Binary Plan">
-                     </div>
-                     <h3 class="mlm-modern-title">Re-purchase Plan</h3>
-                     <p class="mlm-modern-desc">
-                        नियमित Product Purchase से लगातार Business Volume बनता है, 
-                        जिसके आधार पर बोनस और इनाम मिलते रहते हैं।
-                     </p>
-                  </div>
-               </div>
-               <div class="col-lg-4 col-md-6">
-                  <div class="mlm-modern-card">
-                     <div class="mlm-modern-icon">
-                        <img src="./images/webdev5.png" alt="Binary Plan">
-                     </div>
-                     <h3 class="mlm-modern-title">Board Plan</h3>
-                     <p class="mlm-modern-desc">
-                        Board पूरा होने पर सदस्य अगले लेवल में प्रमोट होते हैं और 
-                        अधिक रिवॉर्ड व इनकम का लाभ प्राप्त करते हैं।
-                     </p>
-                  </div>
-               </div>
-               <div class="col-lg-4 col-md-6">
-                  <div class="mlm-modern-card">
-                     <div class="mlm-modern-icon">
-                        <img src="./images/webdev6.png" alt="Binary Plan">
-                     </div>
-                     <h3 class="mlm-modern-title">Hybrid Plan</h3>
-                     <p class="mlm-modern-desc">
-                        Hybrid Plan कई MLM Models के फायदे जोड़कर बनाया जाता है, 
-                        जो आपकी टीम को अधिक कमाई के विकल्प प्रदान करता है।
-                     </p>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-      <section class="pricing-section">
-         <div class="container">
-            <div class="income-heading text-center">
-               <h2 class="mb-3">
-                  <span class="highlight">Choose</span> 
-                  <span class="highlight">your</span> 
-                  <span class="highlight">plan</span>
-               </h2>
-               <p class="mlm-desc">Start small and grow steadily with your network. Upgrade your plan anytime as per company policy to increase earning potential.</p>
-            </div>
-            <div class="row justify-content-center align-items-center">
-               <div class="col-lg-4 col-md-6">
-                  <div class="price-box">
-                     <h3 class="plan-name">Free</h3>
-                     <h2 class="plan-amount">₹0</h2>
-                     <ul class="plan-list">
-                        <li><i class="fa-solid fa-check"></i> Basic dashboard access</li>
-                        <li><i class="fa-solid fa-check"></i> Limited support</li>
-                        <li><i class="fa-solid fa-check"></i> View only reports</li>
-                        <li><i class="fa-solid fa-check"></i> No team income</li>
-                        <li><i class="fa-solid fa-check"></i> Limited support</li>
-                        <li><i class="fa-solid fa-check"></i> View only reports</li>
-                        <li><i class="fa-solid fa-check"></i> No team income</li>
-                     </ul>
-                     <a href="#" class="plan-link">Get Started</a>
-                  </div>
-               </div>
-               <div class="col-lg-4 col-md-6">
-                  <div class="price-box featured">
-                     <h3 class="plan-name white">Personal</h3>
-                     <h2 class="plan-amount white">₹11.99</h2>
-                     <ul class="plan-list white-list">
-                        <li><i class="fa-solid fa-check"></i> Full account access</li>
-                        <li><i class="fa-solid fa-check"></i> Premium features</li>
-                        <li><i class="fa-solid fa-check"></i> Level income enabled</li>
-                        <li><i class="fa-solid fa-check"></i> Team management tools</li>
-                        <li><i class="fa-solid fa-check"></i> Priority support</li>
-                        <li><i class="fa-solid fa-check"></i> Level income enabled</li>
-                        <li><i class="fa-solid fa-check"></i> Team management tools</li>
-                        <li><i class="fa-solid fa-check"></i> Priority support</li>
-                     </ul>
-                     <a href="#" class="plan-link featured-btn">Get Personal</a>
-                  </div>
-               </div>
-               <div class="col-lg-4 col-md-6">
-                  <div class="price-box">
-                     <h3 class="plan-name">Organization</h3>
-                     <h2 class="plan-amount">₹48.99</h2>
-                     <ul class="plan-list">
-                        <li><i class="fa-solid fa-check"></i> All premium features</li>
-                        <li><i class="fa-solid fa-check"></i> Multi-level income</li>
-                        <li><i class="fa-solid fa-check"></i> Company support</li>
-                        <li><i class="fa-solid fa-check"></i> Advanced analytics</li>
-                        <li><i class="fa-solid fa-check"></i> High reward eligibility</li>
-                        <li><i class="fa-solid fa-check"></i> Company support</li>
-                        <li><i class="fa-solid fa-check"></i> Advanced analytics</li>
-                        <li><i class="fa-solid fa-check"></i> High reward eligibility</li>
-                     </ul>
-                     <a href="#" class="plan-link">Get Enterprise</a>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-      <section class="income-section">
-         <div class="container">
-            <div class="income-heading text-center">
-               <h2>इनकम के प्रकार</h2>
-               <p>हम आपके लिए 4 प्रकार की इनकम के अवसर प्रदान करते हैं</p>
-            </div>
-           <div class="row">
-            <div class="col-lg-6">
-            <div class="awardimage">
-               <img src="./images/award.png" alt="award image">
-            </div>
-            </div>
-            <div class="col-lg-6">
-                 <div class="row g-4">
-               <div class="col-lg-6 col-md-6">
-                  <div class="income-card">
-                     <h4>1. डायरेक्ट इनकम</h4>
-                     <p class="income-detail">
-                        सिर्फ 600 रुपए से अपनी रेफरल लिंक खरीदकर  
-                        आप अपने नियर-डियर साथी को रेफर करके  
-                        200 रुपए प्रत्येक मेम्बर से इनकम कर सकते हैं।
-                     </p>
-                  </div>
-               </div>
-               <div class="col-lg-6 col-md-6">
-                  <div class="income-card">
-                     <h4>2. लेवल इनकम</h4>
-                     <p>टीम बढ़ने के साथ हर लेवल पर अलग-अलग इनकम का लाभ मिलता है।</p>
-                  </div>
-               </div>
-               <div class="col-lg-6 col-md-6">
-                  <div class="income-card">
-                     <h4>3. रिवॉर्ड इनकम</h4>
-                     <p>टार्गेट पूरा होने पर आपको कंपनी की ओर से विशेष रिवॉर्ड दिए जाते हैं।</p>
-                  </div>
-               </div>
-               <div class="col-lg-6 col-md-6">
-                  <div class="income-card">
-                     <h4>4. क्लब इनकम</h4>
-                     <p>क्लब क्वालिफिकेशन के बाद आपको हाई लेवल बोनस और इनकम प्राप्त होगी।</p>
-                  </div>
-               </div>
-            </div>
-            </div>
-           </div>
-         </div>
-      </section>
-      <?php include "./common/footer.php"?>
-      <?php include "./common/vendor.php"?>
-   </body>
-</html>
+<?php
+/**
+ * CodeIgniter
+ *
+ * An open source application development framework for PHP
+ *
+ * This content is released under the MIT License (MIT)
+ *
+ * Copyright (c) 2014 - 2019, British Columbia Institute of Technology
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *
+ * @package	CodeIgniter
+ * @author	EllisLab Dev Team
+ * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (https://ellislab.com/)
+ * @copyright	Copyright (c) 2014 - 2019, British Columbia Institute of Technology (https://bcit.ca/)
+ * @license	https://opensource.org/licenses/MIT	MIT License
+ * @link	https://codeigniter.com
+ * @since	Version 1.0.0
+ * @filesource
+ */
+
+/*
+ *---------------------------------------------------------------
+ * APPLICATION ENVIRONMENT
+ *---------------------------------------------------------------
+ *
+ * You can load different configurations depending on your
+ * current environment. Setting the environment also influences
+ * things like logging and error reporting.
+ *
+ * This can be set to anything, but default usage is:
+ *
+ *     development
+ *     testing
+ *     production
+ *
+ * NOTE: If you change these, also change the error_reporting() code below
+ */
+	define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
+
+/*
+ *---------------------------------------------------------------
+ * ERROR REPORTING
+ *---------------------------------------------------------------
+ *
+ * Different environments will require different levels of error reporting.
+ * By default development will show errors but testing and live will hide them.
+ */
+switch (ENVIRONMENT)
+{
+	case 'development':
+		error_reporting(-1);
+		ini_set('display_errors', 1);
+	break;
+
+	case 'testing':
+	case 'production':
+		ini_set('display_errors', 0);
+		if (version_compare(PHP_VERSION, '5.3', '>='))
+		{
+			error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT & ~E_USER_NOTICE & ~E_USER_DEPRECATED);
+		}
+		else
+		{
+			error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_USER_NOTICE);
+		}
+	break;
+
+	default:
+		header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
+		echo 'The application environment is not set correctly.';
+		exit(1); // EXIT_ERROR
+}
+
+/*
+ *---------------------------------------------------------------
+ * SYSTEM DIRECTORY NAME
+ *---------------------------------------------------------------
+ *
+ * This variable must contain the name of your "system" directory.
+ * Set the path if it is not in the same directory as this file.
+ */
+	$system_path = 'system';
+
+/*
+ *---------------------------------------------------------------
+ * APPLICATION DIRECTORY NAME
+ *---------------------------------------------------------------
+ *
+ * If you want this front controller to use a different "application"
+ * directory than the default one you can set its name here. The directory
+ * can also be renamed or relocated anywhere on your server. If you do,
+ * use an absolute (full) server path.
+ * For more info please see the user guide:
+ *
+ * https://codeigniter.com/userguide3/general/managing_apps.html
+ *
+ * NO TRAILING SLASH!
+ */
+	$application_folder = 'application';
+
+/*
+ *---------------------------------------------------------------
+ * VIEW DIRECTORY NAME
+ *---------------------------------------------------------------
+ *
+ * If you want to move the view directory out of the application
+ * directory, set the path to it here. The directory can be renamed
+ * and relocated anywhere on your server. If blank, it will default
+ * to the standard location inside your application directory.
+ * If you do move this, use an absolute (full) server path.
+ *
+ * NO TRAILING SLASH!
+ */
+	$view_folder = '';
+
+
+/*
+ * --------------------------------------------------------------------
+ * DEFAULT CONTROLLER
+ * --------------------------------------------------------------------
+ *
+ * Normally you will set your default controller in the routes.php file.
+ * You can, however, force a custom routing by hard-coding a
+ * specific controller class/function here. For most applications, you
+ * WILL NOT set your routing here, but it's an option for those
+ * special instances where you might want to override the standard
+ * routing in a specific front controller that shares a common CI installation.
+ *
+ * IMPORTANT: If you set the routing here, NO OTHER controller will be
+ * callable. In essence, this preference limits your application to ONE
+ * specific controller. Leave the function name blank if you need
+ * to call functions dynamically via the URI.
+ *
+ * Un-comment the $routing array below to use this feature
+ */
+	// The directory name, relative to the "controllers" directory.  Leave blank
+	// if your controller is not in a sub-directory within the "controllers" one
+	// $routing['directory'] = '';
+
+	// The controller class file name.  Example:  mycontroller
+	// $routing['controller'] = '';
+
+	// The controller function you wish to be called.
+	// $routing['function']	= '';
+
+
+/*
+ * -------------------------------------------------------------------
+ *  CUSTOM CONFIG VALUES
+ * -------------------------------------------------------------------
+ *
+ * The $assign_to_config array below will be passed dynamically to the
+ * config class when initialized. This allows you to set custom config
+ * items or override any default config values found in the config.php file.
+ * This can be handy as it permits you to share one application between
+ * multiple front controller files, with each file containing different
+ * config values.
+ *
+ * Un-comment the $assign_to_config array below to use this feature
+ */
+	// $assign_to_config['name_of_config_item'] = 'value of config item';
+
+
+
+// --------------------------------------------------------------------
+// END OF USER CONFIGURABLE SETTINGS.  DO NOT EDIT BELOW THIS LINE
+// --------------------------------------------------------------------
+
+/*
+ * ---------------------------------------------------------------
+ *  Resolve the system path for increased reliability
+ * ---------------------------------------------------------------
+ */
+
+	// Set the current directory correctly for CLI requests
+	if (defined('STDIN'))
+	{
+		chdir(dirname(__FILE__));
+	}
+
+	if (($_temp = realpath($system_path)) !== FALSE)
+	{
+		$system_path = $_temp.DIRECTORY_SEPARATOR;
+	}
+	else
+	{
+		// Ensure there's a trailing slash
+		$system_path = strtr(
+			rtrim($system_path, '/\\'),
+			'/\\',
+			DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR
+		).DIRECTORY_SEPARATOR;
+	}
+
+	// Is the system path correct?
+	if ( ! is_dir($system_path))
+	{
+		header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
+		echo 'Your system folder path does not appear to be set correctly. Please open the following file and correct this: '.pathinfo(__FILE__, PATHINFO_BASENAME);
+		exit(3); // EXIT_CONFIG
+	}
+
+/*
+ * -------------------------------------------------------------------
+ *  Now that we know the path, set the main path constants
+ * -------------------------------------------------------------------
+ */
+	// The name of THIS file
+	define('SELF', pathinfo(__FILE__, PATHINFO_BASENAME));
+
+	// Path to the system directory
+	define('BASEPATH', $system_path);
+
+	// Path to the front controller (this file) directory
+	define('FCPATH', dirname(__FILE__).DIRECTORY_SEPARATOR);
+
+	// Name of the "system" directory
+	define('SYSDIR', basename(BASEPATH));
+
+	// The path to the "application" directory
+	if (is_dir($application_folder))
+	{
+		if (($_temp = realpath($application_folder)) !== FALSE)
+		{
+			$application_folder = $_temp;
+		}
+		else
+		{
+			$application_folder = strtr(
+				rtrim($application_folder, '/\\'),
+				'/\\',
+				DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR
+			);
+		}
+	}
+	elseif (is_dir(BASEPATH.$application_folder.DIRECTORY_SEPARATOR))
+	{
+		$application_folder = BASEPATH.strtr(
+			trim($application_folder, '/\\'),
+			'/\\',
+			DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR
+		);
+	}
+	else
+	{
+		header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
+		echo 'Your application folder path does not appear to be set correctly. Please open the following file and correct this: '.SELF;
+		exit(3); // EXIT_CONFIG
+	}
+
+	define('APPPATH', $application_folder.DIRECTORY_SEPARATOR);
+
+	// The path to the "views" directory
+	if ( ! isset($view_folder[0]) && is_dir(APPPATH.'views'.DIRECTORY_SEPARATOR))
+	{
+		$view_folder = APPPATH.'views';
+	}
+	elseif (is_dir($view_folder))
+	{
+		if (($_temp = realpath($view_folder)) !== FALSE)
+		{
+			$view_folder = $_temp;
+		}
+		else
+		{
+			$view_folder = strtr(
+				rtrim($view_folder, '/\\'),
+				'/\\',
+				DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR
+			);
+		}
+	}
+	elseif (is_dir(APPPATH.$view_folder.DIRECTORY_SEPARATOR))
+	{
+		$view_folder = APPPATH.strtr(
+			trim($view_folder, '/\\'),
+			'/\\',
+			DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR
+		);
+	}
+	else
+	{
+		header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
+		echo 'Your view folder path does not appear to be set correctly. Please open the following file and correct this: '.SELF;
+		exit(3); // EXIT_CONFIG
+	}
+
+	define('VIEWPATH', $view_folder.DIRECTORY_SEPARATOR);
+
+/*
+ * --------------------------------------------------------------------
+ * LOAD THE BOOTSTRAP FILE
+ * --------------------------------------------------------------------
+ *
+ * And away we go...
+ */
+require_once BASEPATH.'core/CodeIgniter.php';

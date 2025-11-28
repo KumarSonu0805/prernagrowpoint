@@ -4,10 +4,10 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Prernagrowpoint - Login</title>
-      <?php include "./common/include.php"?>
+      <?php $this->load->view("website/common/include"); ?>
    </head>
    <body>
-      <?php include "./common/navbar.php"?>
+      <?php $this->load->view("website/common/navbar"); ?>
      <section class="login-section">
    <div class="container">
       <div class="login-box">
@@ -18,7 +18,7 @@
             <div class="col-lg-6">
                 <h2 class="login-title">Login to Your Account</h2>
          <p class="login-subtitle">Welcome back! Please enter your details.</p>
-                 <form>
+                 <?= form_open('login/validatelogin'); ?>
             <div class="mb-3">
                <label class="form-label">Email Address</label>
                <input type="email" class="form-control login-input" placeholder="name@example.com">
@@ -42,11 +42,11 @@
             <p class="register-text">
                Don’t have an account? <a href="register.php" class="register-link">Register Now</a>
             </p>
-         </form>
+              <?= form_close(); ?>
             </div>
             <div class="col-lg-6">
                 <div class="loginimg">
-                    <img src="./images/loginform.webp" alt="login image">
+                    <img src="../images/loginform.webp" alt="login image">
                 </div>
             </div>
         </div>
@@ -56,7 +56,7 @@
 </section>
 
   
-      <?php include "./common/footer.php"?>
-      <?php include "./common/vendor.php"?>
+      <?php $this->load->view("website/common/footer"); ?>
+      <?php $this->load->view("website/common/vendor"); ?>
    </body>
 </html>

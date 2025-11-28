@@ -11,7 +11,8 @@ class Login extends MY_Controller {
         loginredirect();
 		$this->session->unset_userdata("username");
         $data['title']="Login";
-        $this->template->load('auth','login',$data,'auth');       
+        //$this->template->load('auth','login',$data,'auth');       
+        $this->load->view('website/login',$data);       
     }
     
     public function forgotpassword(){

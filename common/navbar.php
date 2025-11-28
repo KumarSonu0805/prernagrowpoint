@@ -15,8 +15,8 @@
          </div>
          <div class="col-lg-4">
             <ul class="registerHelping d-lg-flex">
-               <li><a href="login.php" class="helpBtn">Login</a></li>
-               <li><a href="register.php" class="helpBtn">Register</a></li>
+               <li><a href="login/" class="helpBtn">Login</a></li>
+               <li><a href="register/" class="helpBtn">Register</a></li>
             </ul>
          </div>
       </div>
@@ -62,10 +62,10 @@
                         href="contact.php">Contact Us</a>
                   </li>
                   <li class="nav-item d-lg-none">
-                     <a class="nav-link" href="login.php">Login</a>
+                     <a class="nav-link" href="login/">Login</a>
                   </li>
                   <li class="nav-item d-lg-none">
-                     <a class="nav-link" href="register.php">Register</a>
+                     <a class="nav-link" href="register/">Register</a>
                   </li>
                </ul>
             </div>

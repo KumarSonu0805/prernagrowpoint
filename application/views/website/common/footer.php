@@ -4,7 +4,7 @@
          <div class="col-lg-4 col-md-6">
             <div class="footer-about">
                <h3 class="footer-title">
-                  <img src="./images/logo.png" alt="logo image">
+                  <img src="../images/logo.png" alt="logo image">
                   <!-- Prernagrowpoint -->
                </h3>
                <p>
@@ -33,8 +33,8 @@
                </div>
                <div class="col-lg-6">
                   <ul class="footer-links">
-                <li><a href="login.php">Login</a></li>
-               <li><a href="register.php">Register</a></li>
+                <li><a href="login/">Login</a></li>
+               <li><a href="register/">Register</a></li>
                 <li><a href="terms.php">Terms and conditions</a></li>
                  <li><a href="privacy.php">Privacy Policy</a></li>
             </ul>

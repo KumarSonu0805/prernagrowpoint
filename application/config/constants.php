@@ -95,11 +95,11 @@ defined('PROJECT_NAME')        OR define('PROJECT_NAME',"Prerna Grow Point");
 defined('OUR_BRAND')       	   OR define('OUR_BRAND',"");
 defined('SESSION_YEAR')        OR define('SESSION_YEAR',"$curyear");
 defined('SITE_SALT')           OR define('SITE_SALT',"Prerna Grow Point");
-defined('TP')        		   OR define('TP',"kb_"); // Table Prefix
+defined('TP')        		   OR define('TP',"pg_"); // Table Prefix
 defined('PRE')                 OR define('PRE',"<pre>");
 defined('NTYPE')               OR define('NTYPE',"toastr"); //Notification Type
 defined('REQUEST_LOG')         OR define('REQUEST_LOG',TRUE); //Request Log
-defined('INVOICE_PREFIX')      OR define('INVOICE_PREFIX','KBH'); //Prefix
+defined('INVOICE_PREFIX')      OR define('INVOICE_PREFIX','PGP'); //Prefix
 defined('CI_DEBUGGER')         OR define('CI_DEBUGGER',FALSE);
 //////////////////////////////////////////////
 /*--------------Template Colors-------------*/

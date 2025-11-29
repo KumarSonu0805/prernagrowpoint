@@ -48,7 +48,7 @@ class Login extends MY_Controller {
 		$result=$this->account->login($data);
 		if($result['status']===true){
             $user=$result['user'];
-            if($user['role']=='admin' || $user['role']=='dealer' || $user['role']=='dso'){
+            if($user['role']=='admin' || $user['role']=='member'){
                 $this->session->unset_userdata('sess_type');
                 $this->startsession($user);
                 loginredirect();

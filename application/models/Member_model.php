@@ -729,14 +729,16 @@ class Member_model extends CI_Model{
 		if($status!==NULL){
 			$where['t3.status']=$status;
 		}
-        $columns="t1.member_id,t1.level_id as level,t2.username,t2.name,t2.mobile,t3.date,t3.activation_date,t3.status,t3.package as amount";
+        $columns="t1.member_id,t1.level_id as level,t2.username,t2.name,t2.mobile,t3.date,t3.activation_date,t3.status,ifnull(t4.amount,0) as amount";
 		$this->db->select($columns);
 		$this->db->from("level_members t1");
 		$this->db->join("users t2","t1.member_id=t2.id");
 		$this->db->join("members t3","t1.member_id=t3.regid");
+		$this->db->join("packages t4","t3.package_id=t4.id",'left');
 		$this->db->where($where);
 		$this->db->order_by("t1.level_id");
 		$query=$this->db->get();
+        //print_pre($this->db->error());
 		$array=$query->result_array();
 		return $array;
 	}

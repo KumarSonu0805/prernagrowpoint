@@ -54,22 +54,6 @@ class Home extends MY_Controller {
 		$this->template->load('pages','changepassword',$data);
 	}
     
-	public function markattendance(){
-        $data['user']=getuser();
-        $checkattendance=$this->attendance->checkattendance($data['user']['id']);
-        if($checkattendance['status']===false || $checkattendance['count']<2){
-            $data['title']="Mark Attendance";
-            //$data['subtitle']="Sample Subtitle";
-            $data['breadcrumb']=array();
-            $data['alertify']=true;
-            $data['checkattendance']=$checkattendance;
-            $this->template->load('pages','markattendance',$data);
-        }
-        else{
-            redirect('/');
-        }
-	}
-    
     public function updatepassword(){
         if($this->input->post('updatepassword')!==NULL){
             $old_password=$this->input->post('old_password');
@@ -100,66 +84,14 @@ class Home extends MY_Controller {
         redirect($_SERVER['HTTP_REFERER']);
     }
     
-    public function saveattendance(){
-        if($this->input->post('saveattendance')!==NULL){
-            $data=$this->input->post();
-            $user=getuser();
-            $checkattendance=$this->attendance->checkattendance($user['id']);
-            if($checkattendance['count']<2){
-                $type='In';
-                if($checkattendance['count']==1){
-                    $type="Out";
-                }
-                $data['user_id']=$user['id'];
-                $upload_path='./assets/images/employees/meter/';
-                $allowed_types='gif|jpg|jpeg|png|svg';
-                $upload=upload_file('image',$upload_path,$allowed_types,$user['name'].'-'.date('Y-m-d').'-'.$type.'-bike-meter');
-                if($upload['status']===true){
-                    $data['date']=date('Y-m-d');
-                    $data['attendance']=1;
-                    $datetime=date("Y-m-d H:i:s");
-                    $data['added_on']=$data['updated_on']=$datetime;
-                    $data['type']=$type;
-                    unset($data['username'],$data['saveattendance']);
-                    $data['image']=$upload['path'];
-                    //print_pre($data,true);
-                    $result=$this->attendance->saveattendance($data);
-                    if($result['status']==true){
-                        $this->session->set_flashdata('msg',$result['message']);
-                    }
-                    else{
-                        $this->session->set_flashdata('err_msg',$result['message']);
-                    }
-                }
-                else{ 
-                    $this->session->set_flashdata('err_msg',"Image not uploaded! ".trim($upload['msg']));
-                }
-            }
-            else{ 
-                $this->session->set_flashdata('err_msg',"Today's Attendance already Done!");
-            }
-        }
-        redirect('/');
+    public function addallcommission(){
+		$time1 = microtime(true);
+        $date=date('Y-m-d');
+		$this->wallet->addallcommission($date);
+		$time2 = microtime(true);
+		$time=$time2-$time1;
+        echo "\nInterval Cron Success in $time seconds. Date : ".date('Y-m-d H:i:s');
     }
-    
-    
-    public function savelocation(){
-        $user=getuser();
-        $checkattendance=$this->attendance->checkattendance($user['id']);
-        if($checkattendance['status']==true){
-            $latitude=$this->input->post('lat');
-            $longitude=$this->input->post('long');
-            if(!empty($latitude) && !empty($longitude)){
-                $data=array("user_id"=>$user['id'],"latitude"=>$latitude,"longitude"=>$longitude);
-                $result=$this->attendance->savecurrentlocation($data);
-                echo json_encode($result);
-            }
-        }
-        else{
-            echo 'Attendance not Done';
-        }
-    }
-    
     
     public function template(){
         $data['title']="Template";
@@ -334,7 +266,8 @@ class Home extends MY_Controller {
 	
     public function runquery(){
         $query=array(
-            "INSERT INTO `pg_packages` (`id`, `package`, `amount`, `bv`, `direct`, `capping`, `status`) VALUES (1, 'P-600', '600', '', '200', '', '1');"
+            "INSERT INTO `pg_packages` (`id`, `package`, `amount`, `bv`, `direct`, `capping`, `status`) VALUES (1, 'P-600', '600', '', '200', '', '1');",
+            "ALTER TABLE `pg_wallet` ADD `level` INT NOT NULL AFTER `member_id`;"
         );
         foreach($query as $sql){
             if(!$this->db->query($sql)){

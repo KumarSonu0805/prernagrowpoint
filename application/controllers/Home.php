@@ -266,8 +266,7 @@ class Home extends MY_Controller {
 	
     public function runquery(){
         $query=array(
-            "INSERT INTO `pg_packages` (`id`, `package`, `amount`, `bv`, `direct`, `capping`, `status`) VALUES (1, 'P-600', '600', '', '200', '', '1');",
-            "ALTER TABLE `pg_wallet` ADD `level` INT NOT NULL AFTER `member_id`;"
+            "ALTER TABLE `pg_wallet` ADD `updated_on` DATETIME NOT NULL AFTER `added_on`;"
         );
         foreach($query as $sql){
             if(!$this->db->query($sql)){

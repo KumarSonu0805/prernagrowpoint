@@ -11,7 +11,7 @@ class Wallet_model extends CI_Model{
 	public function checkstatus($regid,$date=NULL){
 		$where=array("regid"=>$regid,"status"=>'1');
 		if($date!==NULL){
-			$where['activation_date<=']=$date;
+			$where['date(activation_date)<=']=$date;
 		}
 		$checkstatus=$this->db->get_where("members",$where)->num_rows();
 		if($checkstatus==0){ $this->status=false; }
@@ -23,18 +23,16 @@ class Wallet_model extends CI_Model{
             $date=date('Y-m-d');
         }
         if($this->status){
-            $where="t1.refid='$regid' and t1.activation_date<='$date' and t1.regid not in 
+            $where="t1.refid='$regid' and date(t1.activation_date)<='$date' and t1.regid not in 
                     (SELECT member_id from ".TP."wallet where regid='$regid' and remarks='Direct Income')";
-            $newdirects=array();//$this->member->directmembers($where);
-            $packages=$this->db->get('packages')->result_array();
-            $package_ids=array_column($packages,'id');
+            $newdirects=$this->member->getdirectmembers($regid);
+            $added=$this->db->get_where('wallet',['regid'=>$regid,'remarks'=>'Direct Income'])->result_array();
+            $member_ids=!empty($added)?array_column($added,'member_id'):array();
             if(!empty($newdirects)){
                 foreach($newdirects as $member){
-                    $index=array_search($member['package_id'],$package_ids);
-                    if($index!==false){
-                        $packageamount=$packages[$index]['amount'];
+                    if(!in_array($member['regid'],$member_ids)){
                         $member_id=$member['regid'];
-                        $amount=500;
+                        $amount=$member['direct'];
                         if($amount>0){
                             $data=array("date"=>$date,"type"=>"ewallet","regid"=>$regid,"member_id"=>$member_id,
                                         "amount"=>$amount,"remarks"=>"Direct Income","added_on"=>date('Y-m-d H:i:s'),
@@ -43,6 +41,7 @@ class Wallet_model extends CI_Model{
                                          "remarks"=>"Direct Income");
                             if($this->db->get_where("wallet",$where)->num_rows()==0){
                                 $this->db->insert("wallet",$data);
+                                print_pre($this->db->error());
                             }
                         }
                     }
@@ -109,6 +108,7 @@ class Wallet_model extends CI_Model{
 		}
 		$this->db->select('id');
 		$where="id>1";
+        $this->db->order_by('id desc');
 		$query=$this->db->get_where("users",$where);
 		$array=$query->result_array();
 		if(is_array($array)){

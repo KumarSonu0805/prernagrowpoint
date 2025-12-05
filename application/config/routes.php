@@ -61,3 +61,4 @@ $route['logout']='login/logout';
 
 $route['register']='members/index';
 $route['registered']='members/registered';
+$route['activateaccount']='deposits/index';

@@ -112,11 +112,11 @@
                                                             </tr>
                                                             <tr>
                                                                 <th>Joining Date</th>
-                                                                <td><?= date('d-m-Y',strtotime($member['date'])); ?></td>
+                                                                <td><?= date('d-m-Y h:i A',strtotime($member['date'].' '.$member['time'])); ?></td>
                                                             </tr>
                                                             <tr>
                                                                 <th>Activation Date</th>
-                                                                <td><?= !empty($member['activation_date']) && $member['activation_date']!='0000-00-00'?date('d-m-Y',strtotime($member['activation_date'])):'--'; ?></td>
+                                                                <td><?= !empty($member['activation_date']) && $member['activation_date']!='0000-00-00'?date('d-m-Y h:i A',strtotime($member['activation_date'])):'--'; ?></td>
                                                             </tr>
                                                             <tr>
                                                                 <th>Status</th>

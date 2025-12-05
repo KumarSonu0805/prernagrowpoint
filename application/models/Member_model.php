@@ -339,7 +339,7 @@ class Member_model extends CI_Model{
         // Query to fetch hierarchy using variables
         $query = "
             SELECT u.id as regid,u.username,u.name,u.vp as password,concat_ws(',',m.district,m.state) as location,
-							u2.username as ref,u2.name as refname,m.date,m.activation_date,ifnull(t4.package,'--') as package,m.status
+							u2.username as ref,u2.name as refname,m.date,m.time,m.activation_date,ifnull(t4.package,'--') as package,m.status
             FROM (
                 SELECT regid, @pv := CONCAT(@pv, ',', regid) AS pv
                 FROM (

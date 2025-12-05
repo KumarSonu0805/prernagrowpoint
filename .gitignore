@@ -32,6 +32,7 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 /tests/results/
 /assets/images/employees/
 /assets/images/dealers/
+/assets/uploads/
 
 /lib_updater.php
 /mylib/

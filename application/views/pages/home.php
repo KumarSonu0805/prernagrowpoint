@@ -16,7 +16,7 @@
                                                     <div class="card bg-info">
                                                         <div class="card-body">
                                                             <div class="inner">
-                                                                <h3><?= $total_members; ?></h3>
+                                                                <h3><?= $total_members??0; ?></h3>
                                                                 <p>Total Members</p>
                                                             </div>
                                                             <div class="icon">
@@ -32,7 +32,7 @@
                                                     <div class="card bg-success">
                                                         <div class="card-body">
                                                             <div class="inner">
-                                                                <h3><?= $active_members; ?></h3>
+                                                                <h3><?= $active_members??0; ?></h3>
                                                                 <p>Active Members</p>
                                                             </div>
                                                             <div class="icon">
@@ -48,7 +48,7 @@
                                                     <div class="card bg-primary">
                                                         <div class="card-body">
                                                             <div class="inner">
-                                                                <h3><?= $inactive_members ?></h3>
+                                                                <h3><?= $inactive_members??0 ?></h3>
                                                                 <p>In-Active Members</p>
                                                             </div>
                                                             <div class="icon">

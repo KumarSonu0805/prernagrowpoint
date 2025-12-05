@@ -9,23 +9,40 @@ class Home extends MY_Controller {
     
     public function index(){
         checklogin();
-        //$this->clearlogs();
         //$this->wallet->addallcommission();
-        $data['title']="Home";
-        if($this->session->role=='admin'){
-            $this->template->load('pages','home',$data);
-        }
-        elseif($this->session->role=='dso'){
-            $user=getuser();
-            $checkattendance=$this->attendance->checkattendance($user['id']);
-            if($checkattendance['status']===false && $checkattendance['message']=="Attendance not Done!"){
-                redirect('markattendance/');
+		$data['title']="Home";    
+        if($this->session->role=='member'){
+            $data['user']=getuser();
+            $regid=$data['user']['id'];
+            //$this->wallet->addcommission($regid);
+            $memberdetails=$this->member->getalldetails($regid);
+            $data['member']=$memberdetails['member'];
+            //$homedata=$this->common->homedata($regid);
+            
+            $date=date('Y-m-d');
+            $status=0;
+            
+            $message="";
+            if($memberdetails['member']['status']==1){
+                $status=1;
             }
-            $this->template->load('pages','emphome',$data);
+            $data['status']=$status;
+            $data['message']=$message;
+            $where="(t1.regid='$regid' || t1.regid='0') and t1.to_regid!='$regid'";
+            //$data['donations']=$this->deposit->getpendingdonation($where);
+            //print_pre($data,true);
+            $data['datatable']=true;
         }
         else{
-            $this->template->load('pages','home',$data);
+            //$this->addallcommission();
+            //$this->deletetokens();
+            //$this->deleteinactivemembers();
+            //$this->clearlogs();
+            //$this->wallet->addallcommission();
+            $homedata=$this->common->adminhomedata();
         }
+        //$data=array_merge($data,$homedata);
+		$this->template->load('pages','home',$data);  
     }
     
 	public function changepassword(){

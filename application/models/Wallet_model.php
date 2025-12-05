@@ -41,7 +41,6 @@ class Wallet_model extends CI_Model{
                                          "remarks"=>"Direct Income");
                             if($this->db->get_where("wallet",$where)->num_rows()==0){
                                 $this->db->insert("wallet",$data);
-                                print_pre($this->db->error());
                             }
                         }
                     }

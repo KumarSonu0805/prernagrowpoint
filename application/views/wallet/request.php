@@ -37,7 +37,7 @@
                                     <div class="form-group">
                                         <?php
                                             echo create_form_input('number','amount','Withdrawal Amount',true,'',array("id"=>"amount","Placeholder"=>"Withdrawal Amount","autocomplete"=>"off","min"=>MIN_WITHDRAW));
-                                        ?><p class="text-danger">* 5% TDS and 5% Admin Charge Will be deducted from Withdrawal Amount</p>
+                                        ?><p class="text-danger">* <?= TDS ?>% TDS and <?= ADMIN_CHARGE ?>% Admin Charge Will be deducted from Withdrawal Amount</p>
                                     </div>
                                     <?php
                                         echo create_form_input("hidden","regid","",false,$user['id']); 

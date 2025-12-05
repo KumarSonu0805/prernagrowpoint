@@ -9,7 +9,7 @@ class Home extends MY_Controller {
     
     public function index(){
         checklogin();
-        //$this->wallet->addallcommission();
+        $this->wallet->addallcommission();
 		$data['title']="Home";    
         if($this->session->role=='member'){
             $data['user']=getuser();

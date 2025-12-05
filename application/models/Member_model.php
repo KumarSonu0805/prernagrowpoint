@@ -583,7 +583,7 @@ class Member_model extends CI_Model{
 	
 	public function activatemember($data){
 		$regid=$data['regid'];
-		$updata['activation_date']=date('Y-m-d');
+		$updata['activation_date']=date('Y-m-d H:i:s');
 		$updata['package_id']=$data['package_id'];
 		$updata['status']=1;
 		$data['date']=date('Y-m-d');
@@ -721,14 +721,19 @@ class Member_model extends CI_Model{
 		return $array;
 	}
 	
-	public function levelwisemembers($regid,$date=NULL){
+	public function levelwisemembers($regid,$date=NULL,$status=NULL){
 		$where=array("t1.regid"=>$regid);
 		if($date!==NULL){
-			$where['date(t1.added_on)<=']=$date;
+			$where['date(t3.activation_date)<=']=$date;
 		}
-		$this->db->select("t1.member_id,t1.level_id as level,t2.username,t2.name");
+		if($status!==NULL){
+			$where['t3.status']=$status;
+		}
+        $columns="t1.member_id,t1.level_id as level,t2.username,t2.name,t2.mobile,t3.date,t3.activation_date,t3.status,t3.package as amount";
+		$this->db->select($columns);
 		$this->db->from("level_members t1");
 		$this->db->join("users t2","t1.member_id=t2.id");
+		$this->db->join("members t3","t1.member_id=t3.regid");
 		$this->db->where($where);
 		$this->db->order_by("t1.level_id");
 		$query=$this->db->get();

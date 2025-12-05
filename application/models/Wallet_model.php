@@ -52,11 +52,54 @@ class Wallet_model extends CI_Model{
         }
     }
 	
+	function getLevelPercentage($level) {
+        if ($level == 1) return 10;
+        if ($level == 2) return 5; 
+        if ($level == 3) return 4;
+        if ($level == 4) return 3.5;
+        if ($level == 5) return 3;
+        if ($level == 6) return 2.5;
+        if ($level == 7) return 2;
+        if ($level == 8) return 1.5;
+        if ($level == 9) return 1;
+        if ($level == 10) return 0.5;
+        return 0;
+	}
+	
+    public function levelincome($regid,$date=NULL){
+        if($date===NULL){
+            $date=date('Y-m-d');
+        }
+        if($this->status){
+            $levelmembers=$this->member->levelwisemembers($regid,$date,1);
+            //print_pre($levelmembers);
+            if(!empty($levelmembers)){
+                foreach($levelmembers as $levelmember){
+                    $member_id=$levelmember['member_id'];
+                    $level=$levelmember['level'];
+					$amount=$levelmember['amount'];
+                    $rate=$this->getLevelPercentage($level);
+                    if($rate>0 && $amount>0){
+                        $amount=($amount*$rate)/100;
+                        $data=array("date"=>$date,"type"=>"ewallet","regid"=>$regid,"member_id"=>$member_id,'level'=>$level,
+                                    "amount"=>$amount,"remarks"=>"Level Income","added_on"=>date('Y-m-d H:i:s'),
+                                    "updated_on"=>date('Y-m-d H:i:s'));
+                        $where=array("type"=>"ewallet","regid"=>$regid,"member_id"=>$member_id,'level'=>$level,
+                                    "remarks"=>"Level Income");
+                        if($this->db->get_where("wallet",$where)->num_rows()==0){
+                            $this->db->insert("wallet",$data);
+                        }
+                    }
+                }
+            }
+        }
+	}
+	
 	
 	public function addcommission($regid,$date=NULL){
 		$this->checkstatus($regid,$date);
 		$this->sponsorincome($regid,$date);
-		//$this->addroyaltyincome($regid,$date);
+		$this->levelincome($regid,$date);
 		//$this->addreward($regid,$date);
 	}
 	

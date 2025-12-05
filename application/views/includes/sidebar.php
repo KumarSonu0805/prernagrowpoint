@@ -139,13 +139,13 @@
                                     </li><?php */?>
                                     <?php if($this->session->role=='admin'){ ?>
                                     
-                                    <li class="nav-item d-none">
+                                    <li class="nav-item">
                                         <a href="<?= base_url("members/activationrequests/"); ?>" class="nav-link <?= activate_menu('members/activationrequests'); ?>">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Activation Request List</p>
                                         </a>
                                     </li>
-                                    <li class="nav-item d-none">
+                                    <li class="nav-item">
                                         <a href="<?= base_url("members/approvedactivations/"); ?>" class="nav-link <?= activate_menu('members/approvedactivations'); ?>">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Approved Activation List</p>

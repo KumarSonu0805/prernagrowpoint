@@ -185,9 +185,9 @@ class Wallet extends MY_Controller {
 		if($this->input->post('requestpayout')!==NULL){
 			$data=$this->input->post();
 			unset($data['requestpayout']);
-			$data['tds']=0.05*$data['amount'];
-			$data['admin_charge']=0.05*$data['amount'];
-			$data['payable']=$data['amount']-(0.1*$data['amount']);
+			$data['tds']=(TDS*$data['amount'])/100;
+			$data['admin_charge']=(ADMIN_CHARGE*$data['amount'])/100;
+			$data['payable']=$data['amount']-((TDS+ADMIN_CHARGE)*$data['amount']);
 			$data['updated_on']=$data['added_on']=date('Y-m-d H:i:s');
 			$result=$this->wallet->requestpayout($data);
 			if($result===true){

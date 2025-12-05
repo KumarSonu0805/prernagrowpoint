@@ -110,6 +110,9 @@ defined('BRAND_COLOR')         OR define('BRAND_COLOR',"navbar-primary");
 defined('SIDEBAR_COLOR')       OR define('SIDEBAR_COLOR',"sidebar-dark-theme sidebar-dark-primary");
 //////////////////////////////////////////////
 
+defined('TDS')            		  OR define('TDS',5); //TDS
+defined('ADMIN_CHARGE')           OR define('ADMIN_CHARGE',5); //ADMIN_CHARGE
+
 /////////////////////////////////////////////
 if(isset($_SERVER['HTTP_HOST']) && ($_SERVER['HTTP_HOST']=='localhost')){
 	defined('DB_HOST')		? null : define('DB_HOST','127.0.0.1');

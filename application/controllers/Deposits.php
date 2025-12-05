@@ -10,6 +10,9 @@ class Deposits extends CI_Controller {
 	}
 	
 	public function index(){
+        if($this->session->role=='admin'){
+            redirect('home/');
+        }
 		if(!empty($this->session->deposit_id)){
 			redirect('deposits/makepayment/');
 		}

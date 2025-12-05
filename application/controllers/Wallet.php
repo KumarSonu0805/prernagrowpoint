@@ -185,16 +185,21 @@ class Wallet extends MY_Controller {
 		if($this->input->post('requestpayout')!==NULL){
 			$data=$this->input->post();
 			unset($data['requestpayout']);
-			$data['tds']=(TDS*$data['amount'])/100;
-			$data['admin_charge']=(ADMIN_CHARGE*$data['amount'])/100;
-			$data['payable']=$data['amount']-((TDS+ADMIN_CHARGE)*$data['amount']);
-			$data['updated_on']=$data['added_on']=date('Y-m-d H:i:s');
-			$result=$this->wallet->requestpayout($data);
-			if($result===true){
-				$this->session->set_flashdata("msg","Withdrawal Request Submitted successfully!");
+            if($data['amount']>=MIN_WITHDRAW){
+                $data['tds']=(TDS*$data['amount'])/100;
+                $data['admin_charge']=(ADMIN_CHARGE*$data['amount'])/100;
+                $data['payable']=$data['amount']-(((TDS+ADMIN_CHARGE)*$data['amount'])/100);
+                $data['updated_on']=$data['added_on']=date('Y-m-d H:i:s');
+                $result=$this->wallet->requestpayout($data);
+                if($result===true){
+                    $this->session->set_flashdata("msg","Withdrawal Request Submitted successfully!");
+                }
+                else{
+                    $this->session->set_flashdata("err_msg",$result['message']);
+                }
 			}
 			else{
-				$this->session->set_flashdata("err_msg",$result['message']);
+				$this->session->set_flashdata("err_msg","Invalid Amount!");
 			}
 		}
 		redirect('wallet/withdrawal/');

@@ -14,7 +14,7 @@
                                     <h3>
                                     	E-Wallet Current Balance : <span class="text-success"><i class="fa fa-inr"></i> <?php echo $this->amount->toDecimal($wallet['actualwallet']); ?></span>
                                     </h3>
-                                    <p class="text-danger d-none">* 5% TDS and 5% Admin Charge Will be deducted</p>
+                                    <p class="text-danger">* <?= TDS ?>% TDS and <?= ADMIN_CHARGE ?>% Admin Charge Will be deducted</p>
                                 </section>
                             </div>
                         </div><br>
@@ -22,14 +22,14 @@
                             <div class="col-md-12">
                                 <section class="panel">
                                     <div class="revenue-head">
-                                        <h3>Withdrawal Request</h3>
+                                        <h3>Withdrawal Requests</h3>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-12 d-none">
+                                        <div class="col-md-12">
                                             <p class="text-danger mb-1">Note :</p>
                                             <ol class="pl-3 ">
-                                            	<li class="text-danger">Minimum Withdrawal Amount is <i class="fa fa-inr"></i> 500.</li>
-                                            	<li class="text-danger">Amount Withdrawal requested after 6 P.M. will be approved next day. </li>
+                                            	<li class="text-danger">Minimum Withdrawal Amount is <i class="fa fa-inr"></i> <?= MIN_WITHDRAW ?>.</li>
+                                            	<li class="text-danger d-none">Amount Withdrawal requested after 6 P.M. will be approved next day. </li>
                                             	<li class="text-danger">After change of withdrawal status to 'Approved', Please wait 24 Hours to get amount in your Account.</li>
                                             	<li class="text-danger">After 24 Hours to Approved status, If amount is not credited in your Account then you can claim in next 7 working days.</li>
                                             </ol>

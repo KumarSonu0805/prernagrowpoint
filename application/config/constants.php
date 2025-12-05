@@ -112,6 +112,7 @@ defined('SIDEBAR_COLOR')       OR define('SIDEBAR_COLOR',"sidebar-dark-theme sid
 
 defined('TDS')            		  OR define('TDS',5); //TDS
 defined('ADMIN_CHARGE')           OR define('ADMIN_CHARGE',5); //ADMIN_CHARGE
+defined('MIN_WITHDRAW')           OR define('MIN_WITHDRAW',500); //MIN_WITHDRAW
 
 /////////////////////////////////////////////
 if(isset($_SERVER['HTTP_HOST']) && ($_SERVER['HTTP_HOST']=='localhost')){

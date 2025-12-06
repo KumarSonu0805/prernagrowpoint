@@ -222,7 +222,7 @@ class Wallet_model extends CI_Model{
 	
 	public function getwitdrawalrequest($where=array(),$type='all'){
 		if(empty($where)){ $where['t1.status']=0; }
-		$this->db->select("t1.*, t2.username,t2.name,t3.account_no,t3.ifsc");
+		$this->db->select("t1.*, t2.username,t2.name,t3.bank,t3.account_no,t3.account_name,t3.ifsc,t3.cheque");
 		$this->db->from('withdrawals t1');
 		$this->db->join('users t2','t1.regid=t2.id','Left');
 		$this->db->join('acc_details t3','t1.regid=t3.regid','Left');
@@ -244,9 +244,9 @@ class Wallet_model extends CI_Model{
 		}
 	}
 	
-	public function rejectpayout($id){
+	public function rejectpayout($id,$reason){
 		$updated_on=date('Y-m-d H:i:s');
-		$data=array("status"=>2,"updated_on"=>$updated_on);
+		$data=array("status"=>2,'reason'=>$reason,"updated_on"=>$updated_on);
 		if($this->session->role=='admin'){
 			$data['approve_date']=date('Y-m-d');
 		}

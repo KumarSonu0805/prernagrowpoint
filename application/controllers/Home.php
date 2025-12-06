@@ -266,7 +266,7 @@ class Home extends MY_Controller {
 	
     public function runquery(){
         $query=array(
-            "ALTER TABLE `pg_wallet` ADD `updated_on` DATETIME NOT NULL AFTER `added_on`;"
+            "ALTER TABLE `pg_withdrawals` ADD `reason` VARCHAR(200) NULL DEFAULT NULL AFTER `approve_date`;"
         );
         foreach($query as $sql){
             if(!$this->db->query($sql)){

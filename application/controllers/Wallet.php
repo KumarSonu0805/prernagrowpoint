@@ -8,6 +8,7 @@ class Wallet extends MY_Controller {
 	}
 	
 	public function index(){
+        if($this->session->role=='admin'){ redirect('home/'); }
 		$data['title']="Wallet Balance";
 		$data['breadcrumb']=array("/"=>"Home");
         $data['user']=getuser();
@@ -21,6 +22,7 @@ class Wallet extends MY_Controller {
 	}
 	
 	public function incomes(){
+        if($this->session->role=='admin'){ redirect('home/'); }
 		$data['title']="My Incomes";
 		$data['breadcrumb']=array("/"=>"Home");
         $data['user']=getuser();
@@ -31,7 +33,7 @@ class Wallet extends MY_Controller {
 	}
 	
 	public function membercommission(){
-		if($this->session->role!='admin'){ redirect('/'); }
+		if($this->session->role!='admin'){ redirect('home/'); }
 		$data['title']="Member Commission";
 		$data['breadcrumb']=array("/"=>"Home");
         $data['user']=getuser();
@@ -41,7 +43,7 @@ class Wallet extends MY_Controller {
 	}
 	
 	public function memberincome($regid=NULL){
-		if($this->session->role!='admin'){ redirect('/'); }
+		if($this->session->role!='admin'){ redirect('home/'); }
 		if($regid===NULL){ redirect("wallet/membercommission/"); }
 		$data['title']="Member Income";
 		$data['breadcrumb']=array("/"=>"Home");
@@ -84,7 +86,7 @@ class Wallet extends MY_Controller {
 	}
 	
 	public function withdrawal(){
-		if($this->session->role=='admin'){ redirect('/'); }
+		if($this->session->role=='admin'){ redirect('home/'); }
 		$data['title']="Witdrawal";
 		$data['breadcrumb']=array("/"=>"Home","wallet/"=>"Wallet");
         $data['user']=getuser();
@@ -99,7 +101,7 @@ class Wallet extends MY_Controller {
 	}
 	
 	public function memberrewards(){
-		if($this->session->role!='admin'){ redirect('/'); }
+		if($this->session->role!='admin'){ redirect('home/'); }
 		$data['title']="Member Rewards";
 		$members=$this->wallet->getmemberrewards();
 		$data['members']=$members;
@@ -108,20 +110,32 @@ class Wallet extends MY_Controller {
 	}
 	
 	public function requestlist(){
-		if($this->session->role!='admin'){ redirect('/'); }
+		if($this->session->role!='admin'){ redirect('home/'); }
 		$data['title']="Withdrawal Requests";
 		$endtime=date('Y-m-d 18:00:00');
 		$today=date('Y-m-d');
-		//$where=array("t1.status"=>0,"t1.added_on<"=>$endtime);
-		$where="(t1.status=0 and t1.added_on<'$endtime') or (t1.status=1 and t1.approve_date='$today') ";
+		$where=array("t1.status"=>0);
 		$members=$this->wallet->getwitdrawalrequest($where);
 		$data['members']=$members;
 		$data['datatable']=true;
+		$data['datatableexport']=true;
+		$this->template->load('wallet','requestlist',$data);
+	}
+	
+	public function approvedlist(){
+		if($this->session->role!='admin'){ redirect('home/'); }
+		$data['title']="Approved Withdrawal Requests";
+		$where=array("t1.status"=>1);
+		$members=$this->wallet->getwitdrawalrequest($where);
+		$data['members']=$members;
+		$data['datatable']=true;
+		$data['datatableexport']=true;
+        $data['register']='abc';
 		$this->template->load('wallet','requestlist',$data);
 	}
 	
 	public function dailypaymentreport(){
-		if($this->session->role!='admin'){ redirect('/'); }
+		if($this->session->role!='admin'){ redirect('home/'); }
 		$data['title']="Daily Payment List";
 		$payments=$this->wallet->dailypaymentreport();
 		$data['payments']=$payments;
@@ -130,7 +144,7 @@ class Wallet extends MY_Controller {
 	}
 	
 	public function paymentreport(){
-		if($this->session->role!='admin'){ redirect('/'); }
+		if($this->session->role!='admin'){ redirect('home/'); }
 		$data['title']="Payment Report";
 		$members=$this->wallet->paymentreport();
 		$data['members']=$members;
@@ -228,7 +242,8 @@ class Wallet extends MY_Controller {
 	public function rejectpayout(){
 		if($this->input->post('request_id')!==NULL){
 			$request_id=$this->input->post('request_id');
-			$result=$this->wallet->rejectpayout($request_id);
+			$reason=$this->input->post('reason');
+			$result=$this->wallet->rejectpayout($request_id,$reason);
 			if($result===true){
 				$this->session->set_flashdata("msg","Payout Request Rejected!");
 			}

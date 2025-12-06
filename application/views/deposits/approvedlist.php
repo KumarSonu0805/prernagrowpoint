@@ -48,7 +48,7 @@
                                                             <td><?php echo $member['trans_type']; ?></td>
                                                             <td><?= $this->amount->toDecimal($member['amount']); ?></td>
                                                             <td><?= $member['details']."<br>".$image; ?></td>
-                                                            <td><?php if($member['approved_on']!='' && $member['status']==1)echo date('d-m-Y',strtotime($member['approved_on'])); ?></td>
+                                                            <td><?php if($member['approved_on']!='' && $member['status']==1)echo date('d-m-Y h:i A',strtotime($member['approved_on'])); ?></td>
                                                             <td><?php echo $status; ?></td>
                                                         </tr>
                                                         <?php

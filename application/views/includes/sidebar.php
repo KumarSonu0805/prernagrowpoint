@@ -281,40 +281,22 @@
                                     <p>Fund Transfer</p>
                                 </a>
                             </li>
-                            <li class="nav-item has-treeview d-none <?php echo activate_dropdown('wallet','li',array('wallettransfer')); ?>">
+                            <li class="nav-item has-treeview <?php echo activate_dropdown('wallet','li',array('wallettransfer')); ?>">
                                 <a href="#" class="nav-link <?php echo activate_dropdown('wallet','a',array('wallettransfer')); ?>">
                                     <i class="nav-icon fas fa-wallet"></i>
                                     <p>Member Payment <i class="right fas fa-angle-left"></i></p>
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="<?php echo base_url("wallet/membercommission/"); ?>" class="nav-link <?php echo activate_menu('wallet/membercommission'); ?>">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Member Commission</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item d-none">
-                                        <a href="<?php echo base_url("wallet/memberrewards/"); ?>" class="nav-link <?php echo activate_menu('wallet/memberrewards'); ?>">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Member Rewards</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
                                         <a href="<?php echo base_url("wallet/requestlist/"); ?>" class="nav-link <?php echo activate_menu('wallet/requestlist'); ?>">
                                             <i class="far fa-circle nav-icon"></i>
-                                            <p>Withdrawal Request</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item d-none">
-                                        <a href="<?php echo base_url("wallet/dailypaymentreport/"); ?>" class="nav-link <?php echo activate_menu('wallet/dailypaymentreport'); ?>">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Daily Payment List</p>
+                                            <p>Withdrawal Requests</p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="<?php echo base_url("wallet/paymentreport/"); ?>" class="nav-link <?php echo activate_menu('wallet/paymentreport'); ?>">
+                                        <a href="<?php echo base_url("wallet/approvedlist/"); ?>" class="nav-link <?php echo activate_menu('wallet/approvedlist'); ?>">
                                             <i class="far fa-circle nav-icon"></i>
-                                            <p>Payment Report</p>
+                                            <p>Approved Withdrawal Requests</p>
                                         </a>
                                     </li>
                                 </ul>

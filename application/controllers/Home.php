@@ -39,9 +39,9 @@ class Home extends MY_Controller {
             //$this->deleteinactivemembers();
             //$this->clearlogs();
             //$this->wallet->addallcommission();
-            //$homedata=$this->common->adminhomedata();
+            $homedata=$this->common->adminhomedata();
         }
-        //$data=array_merge($data,$homedata);
+        $data=array_merge($data,$homedata);
 		$this->template->load('pages','home',$data);  
     }
     

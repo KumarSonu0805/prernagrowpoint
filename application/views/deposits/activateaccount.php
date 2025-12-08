@@ -115,7 +115,7 @@ else{
                                                 if(!empty($admin_acc_details)){
                                             ?>
                                             <div class="col-md-7">
-                                                <legend>Bank Information</legend>
+                                                <legend>Admin Bank Information</legend>
                                                 <table class="table" id="bank-details">
                                                     <tr>
                                                         <th>A/C Holder Name</th>

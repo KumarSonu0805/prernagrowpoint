@@ -51,16 +51,16 @@ class Wallet_model extends CI_Model{
     }
 	
 	function getLevelPercentage($level) {
-        if ($level == 1) return 10;
-        if ($level == 2) return 5; 
-        if ($level == 3) return 4;
-        if ($level == 4) return 3.5;
-        if ($level == 5) return 3;
-        if ($level == 6) return 2.5;
-        if ($level == 7) return 2;
-        if ($level == 8) return 1.5;
-        if ($level == 9) return 1;
-        if ($level == 10) return 0.5;
+        if ($level == 2) return 10;
+        if ($level == 3) return 5; 
+        if ($level == 4) return 4;
+        if ($level == 5) return 3.5;
+        if ($level == 6) return 3;
+        if ($level == 7) return 2.5;
+        if ($level == 8) return 2;
+        if ($level == 9) return 1.5;
+        if ($level == 10) return 1;
+        if ($level == 11) return 0.5;
         return 0;
 	}
 	

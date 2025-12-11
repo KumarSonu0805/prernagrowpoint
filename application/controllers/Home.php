@@ -32,6 +32,7 @@ class Home extends MY_Controller {
             //$data['donations']=$this->deposit->getpendingdonation($where);
             //print_pre($data,true);
             $data['datatable']=true;
+			$homedata=array();
         }
         else{
             //$this->addallcommission();

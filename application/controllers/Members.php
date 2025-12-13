@@ -178,6 +178,9 @@ class Members extends MY_Controller {
 	}
 	
 	public function kyc(){
+        if($this->session->role!='admin'){
+            redirect('/');
+        }
 		checklogin();
 		$data['title']="Member KYC Requests";
 		$data['breadcrumb']=array("/"=>"Home");
@@ -189,6 +192,9 @@ class Members extends MY_Controller {
 	}
 	
 	public function approvedkyc(){
+        if($this->session->role!='admin'){
+            redirect('/');
+        }
 		checklogin();
 		$data['title']="Approved Member KYC";
 		$data['breadcrumb']=array("/"=>"Home");

@@ -152,14 +152,6 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="<?= base_url("members/entertomember/"); ?>" class="nav-link <?= activate_menu('members/entertomember'); ?>">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Enter to Member</p>
-                                        </a>
-                                    </li>
-                                    <?php } ?>
-                                    <?php /*if($this->session->role=='admin'){ ?>
-                                    <li class="nav-item">
                                         <a href="<?php echo base_url("members/kyc/"); ?>" class="nav-link <?php echo activate_menu("members/kyc"); ?>">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>KYC Requests</p>
@@ -171,7 +163,13 @@
                                             <p>Approved KYC</p>
                                         </a>
                                     </li>
-                                    <?php }*/ ?>
+                                    <li class="nav-item">
+                                        <a href="<?= base_url("members/entertomember/"); ?>" class="nav-link <?= activate_menu('members/entertomember'); ?>">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Enter to Member</p>
+                                        </a>
+                                    </li>
+                                    <?php } ?>
                                 </ul>
                             </li>
                             <li class="nav-item has-treeview d-none <?= activate_dropdown('deposits'); ?>">
